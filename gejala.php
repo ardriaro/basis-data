@@ -107,21 +107,29 @@ if(isset($_POST['tanaman'])){
   }
 } elseif (isset($_GET['search'])) {
   $search = mysqli_real_escape_string($konek_db, $_GET['search']);
-  $queri = "SELECT * FROM gejala WHERE idgejala LIKE '%".$search."%' OR gejala LIKE '%".$search."%'";
-  $hasil = mysqli_query($konek_db, $queri);   
+  
+  $stmt = $konek_db->prepare("CALL SearchGejala(?)");
+  $stmt->bind_param("s", $search);
+  $stmt->execute();
+  
+  $result = $stmt->get_result();
+  
   $id = 0;
-  while ($data = mysqli_fetch_array($hasil)){  
-    $id++; 
-    echo "      
+  while ($data = $result->fetch_array(MYSQLI_NUM)) {  
+      $id++; 
+      echo "      
       <tr>  
-        <td>".$id."</td>
-        <td>".$data[0]."</td>  
-        <td>".$data[1]."</td>  
-        <td>".$data[2]."</td>
-        <td>".$data[3]."</td>
-        <td><a href=\"aeditgejala.php?id=".$data[0]."\"><i class='glyphicon glyphicon-pencil'></i></a>"." || <a href=\"adeletegejala.php?id=".$data[0]."\"  onclick='return checkDelete()'><i class='glyphicon glyphicon-trash'></i></a></td>
+          <td>".$id."</td>
+          <td>".$data[0]."</td>  
+          <td>".$data[1]."</td>  
+          <td>".$data[2]."</td>
+          <td>".$data[3]."</td>
+          <td><a href=\"aeditgejala.php?id=".$data[0]."\"><i class='glyphicon glyphicon-pencil'></i></a> || <a href=\"adeletegejala.php?id=".$data[0]."\"  onclick='return checkDelete()'><i class='glyphicon glyphicon-trash'></i></a></td>
       </tr>";      
   }
+  
+  // Close the statement and the connection
+  $stmt->close();
 }
 ?>
  

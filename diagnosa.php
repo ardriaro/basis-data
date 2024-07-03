@@ -148,8 +148,7 @@ header("location: about.php");
             $jumlah_dipilih = count($gejala);
            for($x=0;$x<$jumlah_dipilih;$x++){
                        $tampil ="select DISTINCT p.idpenyakit, p.namapenyakit, p.jenistanaman from basispengetahuan b, penyakit p where b.gejala='$gejala[$x]' and p.namapenyakit=b.namapenyakit group by namapenyakit";
-                       //$tampil = "select DISTICT p.idpenyakit, p.namapenyakit, p.jenistanaman FROM basispengetahuan b, penyakit p WHERE b.gejala='$gejala[$X]' and p.namapenyakit=b.namapenyakit GROUP BY namapenyakit";
-                       //$tampil = "select DISTINCT p.idpenyakit, p.namapenyakit, p.jenistanaman FROM basispengetahuan b JOIN penyakit p ON p.namapenyakit WHERE b.gejala = '$gejala[$x]'";
+                       
                        $result = mysqli_query($konek_db, $tampil);
                        $hasil  = mysqli_fetch_array($result);   
                     
