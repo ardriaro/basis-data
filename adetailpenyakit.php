@@ -182,7 +182,7 @@ header("location: about.php");
     </div>
   </div> 
 <footer class="container-fluid text-center">
-  <p>S1 Teknik Informatika</p>
+  <p>S1 Teknik Informatika 2024</p>
 </footer>
 <script>
 $(document).ready(function(){

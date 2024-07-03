@@ -58,6 +58,18 @@ header("location: about.php");
                 <option>Tomat</option>
   		</select>
   </form>
+
+  <br>
+<!-- Search box and button -->
+<form method="GET" action="hamadanpenyakit.php">
+  <div class="form-group">
+    <label for="search">Search Hama dan Penyakit:</label>
+    <input type="text" class="form-control" name="search" id="search" placeholder="Masukkan nama penyakit" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>">
+    <button type="submit" class="btn btn-primary btn-block active" style="background-color: #228B22; color: #FFFFFF; margin-top: 10px;">Search</button>
+  </div>
+</form>
+<br>
+
 <br>
 <a href="ainputpenyakit.php"><button type="button" class="btn btn-default">
   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -74,26 +86,42 @@ header("location: about.php");
                             <th>Detail</th>
                         </tr>
                     </thead>
-                     <?php
-if(isset($_POST['tanaman']))
-if($_POST['tanaman']!="jenistanaman"){	
-$queri="Select * From penyakit where jenistanaman = \"".$_POST['tanaman']."\"";
-$hasil=mysqli_query ($konek_db,$queri);   
-$id = 0;
-while ($data = mysqli_fetch_array ($hasil)){  
- 			$id++; 
- 			echo "      
-        			<tr>  
-        			<td>".$id."</td>
-					<td>".$data[0]."</td>  
-        			<td>".$data[1]."</td>  
-        			<td>".$data[2]."</td>  
-                    <td><a href=\"adetailpenyakit.php?id=".$data[0]."\"><i class='glyphicon glyphicon-search'></i></a>"." || <a href=\"aeditpenyakit.php?id=".$data[0]."\"><i class='glyphicon glyphicon-pencil'></i></a>"." || <a href=\"adeletepenyakit.php?id=".$data[0]."\" onclick='return checkDelete()'><i class='glyphicon glyphicon-trash'></i></a>"."</td>
-        		</tr>   
-        	";      
-			}
+                    <?php
+if (isset($_POST['tanaman'])) {
+  if ($_POST['tanaman'] != "jenistanaman") {
+    $queri = "SELECT * FROM penyakit WHERE jenistanaman = '".$_POST['tanaman']."'";
+    $hasil = mysqli_query($konek_db, $queri);   
+    $id = 0;
+    while ($data = mysqli_fetch_array($hasil)){  
+      $id++; 
+      echo "      
+        <tr>  
+          <td>".$id."</td>
+          <td>".$data[0]."</td>  
+          <td>".$data[1]."</td>  
+          <td>".$data[2]."</td>  
+          <td><a href=\"adetailpenyakit.php?id=".$data[0]."\"><i class='glyphicon glyphicon-search'></i></a></td>
+        </tr>";      
+    }
+  }
+} elseif (isset($_GET['search'])) {
+  $search = mysqli_real_escape_string($konek_db, $_GET['search']);
+  $queri = "SELECT * FROM penyakit WHERE namapenyakit LIKE '%".$search."%' OR idpenyakit LIKE '%".$search."%'";
+  $hasil = mysqli_query($konek_db, $queri);   
+  $id = 0;
+  while ($data = mysqli_fetch_array($hasil)){  
+    $id++; 
+    echo "      
+      <tr>  
+        <td>".$id."</td>
+        <td>".$data[0]."</td>  
+        <td>".$data[1]."</td>  
+        <td>".$data[2]."</td>  
+        <td><a href=\"adetailpenyakit.php?id=".$data[0]."\"><i class='glyphicon glyphicon-search'></i></a></td>
+      </tr>";      
+  }
 }
- ?>  
+?>
 </table><br><br><br><br><br>
             </div>
     </div>
