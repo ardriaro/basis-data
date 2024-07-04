@@ -2,7 +2,7 @@
 include('koneksi.php');
  
 if(isset($_SESSION['login_user'])){
-header("location: about.php");
+header("location: index.php");
 }
 ?>
 <!DOCTYPE html>

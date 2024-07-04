@@ -94,13 +94,8 @@ header("location: index.php");
             </div>
               <button type="submit" id="submit" nama="submit" class="btn btn-primary btn-block" method="post"><span class="glyphicon glyphicon-off"></span> Login</button>
           </form>     
-            
         </div>
       </div>
-        
-        
-   
-        
     </div>
   </div> 
 

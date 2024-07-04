@@ -96,21 +96,20 @@ header("location: about.php");
 				</div>
 			</div>	
                 <button type="submit" name ="submit" class="btn btn-primary">Simpan</button>
-          <?php			
-                    if(isset($_POST['submit'])){
-                    $idgejala     = $_POST['idgejala'];
-                    $gejala       = $_POST['gejala'];
-                    $daerah       = $_POST['daerah'];
-                    $jenistanaman = $_POST['jenistanaman'];
-                    $query="INSERT INTO gejala SET idgejala='$idgejala',gejala='$gejala',daerah='$daerah',jenistanaman='$jenistanaman'";
-                  $result=mysqli_query($konek_db, $query);
-                        if($result){
-                            echo '<script language="javascript">';
-                            echo 'alert("Data Berhasil disimpan")';
-                            echo '</script>';
-                            }
-                    }
-                ?>
+                <?php			
+if(isset($_POST['submit'])){
+    $idgejala     = $_POST['idgejala'];
+    $gejala       = $_POST['gejala'];
+    $daerah       = $_POST['daerah'];
+    $jenistanaman = $_POST['jenistanaman'];
+    
+    $query = "INSERT INTO gejala (idgejala, gejala, daerah, jenistanaman) 
+              VALUES ('$idgejala', '$gejala', '$daerah', '$jenistanaman')";
+    
+    $result = mysqli_query($konek_db, $query);
+}
+?>
+
 		</form>		
     </div>
   </div>

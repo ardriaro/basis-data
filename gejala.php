@@ -2,7 +2,7 @@
 include('koneksi.php');
  
 if(isset($_SESSION['login_user'])){
-header("location: about.php");
+header("location: index.php");
 }
 ?>
 
@@ -80,7 +80,7 @@ header("location: about.php");
                         <tr>
                             <th>NO</th>
                             <th>ID Gejala</th>
-							<th>Gejala</th>
+							              <th>Gejala</th>
                             <th>Daerah</th>
                             <th>Jenis Tanaman</th>
                             <th>Detail</th>
