@@ -44,9 +44,8 @@ include "session.php";
       <p><a href="logout.php"><button type="button" class="btn btn-primary btn-block" id="myBtn" style="background-color: #228B22; color: #FFFFFF;">LOGOUT</button></a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-       <center><h2>SISTEM PAKAR DIAGNOSA HAMA DAN PENYAKIT TANAMAN TOMAT
-</h2></center><br>
-      <p>Selamat datang <?php echo $login_session; ?>.Silahkan pilih menu yang diinginkan</p>
+       <center><h2>SISTEM PAKAR DIAGNOSA HAMA DAN PENYAKIT TANAMAN TOMAT</h2></center><br>
+      <p>Selamat datang <?php echo $login_session; ?>. Silahkan pilih menu yang diinginkan</p>
     </div>
   </div>
 </div>
