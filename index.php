@@ -22,47 +22,48 @@ if (isset($_SESSION['login_user'])) {
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="index.php">BERANDA</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li class="active"><a href="diagnosa.php">DIAGNOSA PENYAKIT <span class="sr-only">(current)</span></a></li>
+        <li><a href="daftarpenyakit.php">DAFTAR PENYAKIT</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><p><button type="button" class="btn btn-primary btn-block active" style="background-color: #945116; color: #FFFFFF; padding: 10px;" id="myBtn">LOGIN</button></p></li>
       </ul>
-    </div>
-  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="index.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">BERANDA</button></a></p>
-      <p><a href="diagnosa.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">DIAGNOSA PENYAKIT</button></a></p>
-      <p><a href="daftarpenyakit.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">DAFTAR PENYAKIT</button></a></p>
-      <br><br><br><br><br><br><br><br><br><br>
-      <p><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;" id="myBtn">LOGIN</button></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <center><h2>SISTEM PAKAR DIAGNOSA HAMA DAN PENYAKIT TANAMAN TOMAT</h2></center><br>
+    <div class="col-md-8 col-md-offset-2"> 
+      <center><h2>SISTEM PAKAR DIAGNOSA HAMA DAN PENYAKIT TANAMAN PAPRIKA</h2></center><br>
       <div class="panel panel-info">
         <div class="panel-heading"></div>
         <div class="panel-body">
-          <p align=justify>Sistem pakar diagnosa hama dan penyakit pada tanaman tomat adalah aplikasi berbasis teknologi yang dirancang untuk membantu petani dan agronom dalam mengidentifikasi dan mengatasi masalah yang disebabkan oleh hama dan penyakit pada tanaman tomat. Sistem ini memanfaatkan kecerdasan buatan dan pengetahuan dari para ahli di bidang pertanian untuk memberikan rekomendasi yang akurat dan tepat waktu.</p>
+        <p style="font-style: oblique;" align=justify>Selamat Datang di Sistem Pakar Hama dan Penyakit Tanaman Paprika</p>
 
-          <p align=justify>Tanaman tomat rentan terhadap berbagai jenis hama seperti ulat grayak, kutu daun, dan thrips, serta penyakit seperti layu bakteri, busuk buah, dan bercak daun. Tanpa penanganan yang tepat, serangan hama dan penyakit ini dapat menyebabkan penurunan hasil panen dan kualitas buah.</p>
+        <p align=justify>Platform ini dirancang untuk membantu para petani dan pecinta tanaman paprika dalam mengidentifikasi dan menangani hama serta penyakit yang sering menyerang tanaman paprika. Dengan memanfaatkan teknologi sistem pakar, pengguna dapat mengetahui gejala-gejala yang muncul pada tanaman dan mendapatkan solusi penanganan yang tepat.</p>
 
-          <p align=justify>Sistem pakar ini menggunakan metode Certainty Factor (CF) untuk menghitung tingkat kepastian dari diagnosa yang diberikan. Metode CF memungkinkan sistem untuk menangani ketidakpastian dalam diagnosa, memberikan hasil yang lebih fleksibel dan akurat berdasarkan gejala-gejala yang terlihat pada tanaman tomat.</p>
+        <p align=justify>Sistem pakar ini menggunakan metode Certainty Factor (CF) untuk menghitung tingkat kepastian dari diagnosa yang diberikan. Metode CF ini memungkinkan sistem mengelola ketidakpastian dalam diagnosa, menghasilkan analisis yang lebih fleksibel dan akurat berdasarkan gejala-gejala yang ditemukan pada tanaman paprika.</p>
 
-          <p align=justify>Aplikasi ini tersedia dalam bentuk website, memungkinkan akses yang mudah dan cepat bagi pengguna dari berbagai perangkat yang terhubung ke internet. Pengguna dapat menginput data gejala yang muncul pada tanaman mereka, dan sistem akan memproses data tersebut untuk memberikan diagnosa dan rekomendasi tindakan yang harus diambil, seperti penggunaan pestisida yang tepat, metode pengendalian biologis, atau praktik agronomi yang baik.</p>
+        <p align=justify>Aplikasi ini tersedia dalam bentuk website, sehingga memudahkan akses pengguna dari berbagai perangkat yang terhubung ke internet. Pengguna dapat memasukkan data gejala yang tampak pada tanaman mereka, dan sistem akan memproses data tersebut untuk memberikan diagnosa dan rekomendasi tindakan, seperti pemilihan pestisida yang sesuai, pengendalian biologis, atau penerapan praktik agronomi yang efektif.</p>
 
-          <p align=justify>Dengan adanya sistem pakar ini, diharapkan petani dapat lebih cepat dan tepat dalam menangani masalah hama dan penyakit pada tanaman tomat, sehingga produktivitas dan kualitas hasil panen dapat meningkat, serta kerugian akibat serangan hama dan penyakit dapat diminimalisir.</p>
+        <p align=justify>Dengan adanya sistem pakar ini, diharapkan petani dapat merespons lebih cepat dan tepat dalam menangani masalah hama dan penyakit pada tanaman paprika, sehingga produktivitas dan kualitas panen dapat ditingkatkan, serta kerugian akibat serangan hama dan penyakit dapat ditekan.</p>
         </div>
       </div>
     </div>

@@ -19,43 +19,42 @@ header("location: index.php");
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="homeadmin.php">BERANDA</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li class="active"><a href="hamadanpenyakit.php">HAMA DAN PENYAKIT <span class="sr-only">(current)</span></a></li>
+        <li><a href="gejala.php">GEJALA</a></li>
+        <li class="active"><a href="basispengetahuan.php">BASIS PENGETAHUAN <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          
-          
+        <li><p><a href="logout.php"><button type="button" class="btn btn-primary btn-block" id="myBtn" style="background-color: #945116; color: #FFFFFF;">LOGOUT</button></a></p></li>
       </ul>
-    </div>
-  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-left">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="homeadmin.php"><button type="button" class="btn btn-primary btn-block" style="background-color: #228B22; color: #FFFFFF;">BERANDA</button></a></p>
-      <p><a href="hamadanpenyakit.php"><button type="button" class="btn btn-primary btn-block" style="background-color: #228B22; color: #FFFFFF;">HAMA dan PENYAKIT</button></a></p>
-      <p><a href="gejala.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #228B22; color: #FFFFFF;">GEJALA</button></a></p>
-      <p><a href="basispengetahuan.php"><button type="button" class="btn btn-primary btn-block" style="background-color: #228B22; color: #FFFFFF;">BASIS PENGETAHUAN</button></a></p>
-        <br><br><br><br><br><br><br><br><br><br>
-      <p><a href="logout.php"><button type="button" class="btn btn-primary btn-block" style="background-color: #228B22; color: #FFFFFF;" id="myBtn">LOGOUT</button></a></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-md-8 col-md-offset-2"> 
           <h2 class="text-center">DAFTAR GEJALA</h2>
       <form id="form1" name="form1" method="post" action="gejala.php">
 				<label for="sel1">Jenis Tanaman</label>            
 				<select class="form-control" name="tanaman" onChange='this.form.submit();'>
 				<option>Tanaman</option>
-                <option>Tomat</option>
+            <option>Paprika</option>
   		</select>
   </form>
   <br>
@@ -64,7 +63,7 @@ header("location: index.php");
   <div class="form-group">
     <label for="search">Search Penyakit:</label>
     <input type="text" class="form-control" name="search" id="search" placeholder="Masukkan nama penyakit" value="<?php if(isset($_GET['search'])){echo $_GET['search']; } ?>">
-    <button type="submit" class="btn btn-primary btn-block active" style="background-color: #228B22; color: #FFFFFF; margin-top: 10px;">Search</button>
+    <button type="submit" class="btn btn-primary btn-block active" style="background-color: #945116; color: #FFFFFF; margin-top: 10px;">Search</button>
   </div>
 </form>
 <br>

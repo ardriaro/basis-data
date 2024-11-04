@@ -18,34 +18,35 @@ header("location: about.php");
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<nav class="navbar navbar-default" >
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="index.php">BERANDA</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li class="active"><a href="diagnosa.php">DIAGNOSA PENYAKIT <span class="sr-only">(current)</span></a></li>
+        <li><a href="daftarpenyakit.php">DAFTAR PENYAKIT</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><p><button type="button" class="btn btn-primary btn-block active" style="background-color: #945116; color: #FFFFFF; padding: 10px;" id="myBtn">LOGIN</button></p></li>
       </ul>
-    </div>
-  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
   
-<div class="container-fluid text-center">    
+<div class="container-fluid text-left">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-       <p><a href="index.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">BERANDA</button></a></p>
-      <p><a href="diagnosa.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">DIAGNOSA PENYAKIT</button></a></p>
-      <p><a href="daftarpenyakit.php"><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;">DAFTAR PENYAKIT</button></a></p>
-        <br><br><br><br><br><br><br><br><br><br>
-        <p><button type="button" class="btn btn-primary btn-block active" style="background-color: #FF6347; color: #FFFFFF;" id="myBtn">LOGIN</button></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-md-8 col-md-offset-2">
       <h2 class="text-center">DETAIL HAMA DAN PENYAKIT</h2>
       <div class="form-group"  method="POST">
       			<br><label class="control-label col-sm-2">ID :</label>

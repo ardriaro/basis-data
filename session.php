@@ -27,5 +27,5 @@ if (!$login_session) {
     exit();
 }
 
-echo "Selamat datang, $login_session";
+
 ?>
